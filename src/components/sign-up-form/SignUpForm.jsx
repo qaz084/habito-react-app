@@ -14,6 +14,8 @@ const defaultFormFields = {
   confirmPassword: "",
 };
 
+
+
 export const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
@@ -43,13 +45,15 @@ export const SignUpForm = () => {
         email,
         password
       );
+  
+
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (e) {
       if (e.code === "auth/email-already-in-use") {
         alert("emailalready in use");
       }
-      console.log(e);
+
     }
   };
 
@@ -99,7 +103,7 @@ export const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <Button type='submit'>Sign Up</Button>
+        <Button type="submit">Sign Up</Button>
       </form>
     </div>
   );
