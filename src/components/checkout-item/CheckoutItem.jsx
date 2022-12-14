@@ -37,3 +37,4 @@ export const CheckoutItem = ({ cartItem }) => {
     </div>
   );
 };
+
