@@ -1,5 +1,5 @@
 import { useCartContext } from "../../contexts/CartContext";
-import "./checkout-item.styles.scss";
+import {CheckoutItemContainer,CheckoutImageContainer,CheckoutItemName,CheckoutItemQuantity,CheckoutItemArrow,CheckoutItemPrice,CheckoutItemValue,CheckoutIemoveButton} from "./checkout-item.styles";
 
 export const CheckoutItem = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
@@ -11,30 +11,30 @@ export const CheckoutItem = ({ cartItem }) => {
   const sustractItemHandler = () => removetItemFromCart(cartItem);
 
   return (
-    <div className="checkout-item-container">
-      <div className="checkout-image-container">
+    <CheckoutItemContainer>
+      <CheckoutImageContainer>
         <img src={imageUrl} alt={imageUrl} />
-      </div>
-      <span className="checkout-item-name">{name}</span>
+      </CheckoutImageContainer>
+      <CheckoutItemName>{name}</CheckoutItemName>
 
-      <span className="checkout-item-quantity">
-        <div className="checkout-item-arrow" onClick={sustractItemHandler}>
+      <CheckoutItemQuantity>
+        <CheckoutItemArrow onClick={sustractItemHandler}>
           &#10094;
-        </div>
+        </CheckoutItemArrow>
 
-        <span className="checkout-item-value">{quantity}</span>
+        <CheckoutItemValue>{quantity}</CheckoutItemValue>
 
-        <div className="checkout-item-arrow" onClick={addItemHandler}>
+        <CheckoutItemArrow onClick={addItemHandler}>
           &#10095;
-        </div>
-      </span>
+        </CheckoutItemArrow>
+      </CheckoutItemQuantity>
 
-      <span className="checkout-item-price">{price}</span>
+      <CheckoutItemPrice>{price}</CheckoutItemPrice>
 
-      <div className="checkout-remove-button" onClick={clearItemHandler}>
+      <CheckoutIemoveButton onClick={clearItemHandler}>
         &#10005;
-      </div>
-    </div>
+      </CheckoutIemoveButton>
+    </CheckoutItemContainer>
   );
 };
 
