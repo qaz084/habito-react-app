@@ -1,8 +1,43 @@
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext, useEffect,useReducer } from "react";
+import { createAction } from "../utils/reducer/reducer.utils";
 
 export const CartContext = createContext();
 
 export const useCartContext = () => useContext(CartContext);
+
+const INITIAL_STATE={
+
+  cartDropDownState:false,
+  cartItems:[],
+  totalCartQuantity:0,
+  totalCartCost:0
+
+}
+const CART_ACTION_TYPES={
+
+  SET_CART_ITEMS:'SET_CART_ITEMS',
+  SET_IS_CART_OPEN:'SET_IS_CART_OPEN'
+}
+
+const cartReducer=(state,action)=>{
+
+  const{type,payload}=action;
+
+  switch(type){
+    case CART_ACTION_TYPES.SET_CART_ITEMS:
+      return{
+        ...state,
+        ...payload
+      };
+    case CART_ACTION_TYPES.SET_IS_CART_OPEN:
+      return{
+        ...state,
+        cartDropDownState: payload
+      }
+    default:
+      throw new Error(`Unhandled action ${type}`);
+  }
+};
 
 //ADD ITEM
 const isProductInCart = (cartItems, productToAdd) => {
@@ -42,42 +77,74 @@ const clearItemFromCart=(cartItems,productToClear)=>{
 
 export const CartProvider = ({ children }) => {
 
-  const [cartDropDownState, setCartDropDownState] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
-  const [totalCartQuantity, setTotalCartQuantity] = useState(0);
-  const [totalCartCost, setTotalCartCost] = useState(0);
+  // const [cartDropDownState, setCartDropDownState] = useState(false);
+  // const [cartItems, setCartItems] = useState([]);
+  // const [totalCartQuantity, setTotalCartQuantity] = useState(0);
+  // const [totalCartCost, setTotalCartCost,totalCartCost] = useState(0);
+
+  const [{cartItems,cartDropDownState,totalCartQuantity,},dispatch]=useReducer(cartReducer,INITIAL_STATE);
 
 //TOTAL QTY
-  useEffect(() => {
-    const newCartCount = cartItems.reduce(
-      (total, item) => total +item.quantity,
-      0
-    );
-    setTotalCartQuantity(newCartCount);
-  }, [cartItems]);
+  // useEffect(() => {
+  //   const newCartCount = cartItems.reduce(
+  //     (total, item) => total +item.quantity,
+  //     0
+  //   );
+  //   setTotalCartQuantity(newCartCount);
+  // }, [cartItems]);
 
 
 //TOTAL COST
-  useEffect(() => {
-    const newCartCost = cartItems.reduce(
-      (total, item) =>total+(item.quantity * item.price),
-      0
+  // useEffect(() => {
+  //   const newCartCost = cartItems.reduce(
+  //     (total, item) =>total+(item.quantity * item.price),
+  //     0
+  //   );
+  //   setTotalCartCost(newCartCost);
+  // }, [cartItems]);
+
+
+const updateCartItemsReducer=(newCartItems) => {
+
+  const newCartCount = newCartItems.reduce(
+    (total, item) => total +item.quantity,
+    0
+  );
+
+  const newCartCost = newCartItems.reduce(
+    (total, item) =>total+(item.quantity * item.price),
+    0
+  );
+
+    dispatch( createAction(CART_ACTION_TYPES.SET_CART_ITEMS,{
+      cartItems:newCartItems,
+      totalCartCost:newCartCost,
+      totalCartQuantity:newCartCount
+    })
     );
-    setTotalCartCost(newCartCost);
-  }, [cartItems]);
+
+}
 
 
   const addItemToCart = (productToAdd) => {
-    setCartItems(isProductInCart(cartItems, productToAdd));
+   const newCartItems= setCartItems(isProductInCart(cartItems, productToAdd));
+   updateCartItemsReducer(newCartItems);
   };
 
   const removetItemFromCart = (product) => {
-    setCartItems(removeCartItem(cartItems,product))
+    const newCartItems= setCartItems(removeCartItem(cartItems,product))
+    updateCartItemsReducer(newCartItems);
   };
 
   const cleartItemFromCart = (product) => {
-    setCartItems(clearItemFromCart(cartItems,product))
+    const newCartItems= setCartItems(clearItemFromCart(cartItems,product))
+    updateCartItemsReducer(newCartItems);
   };
+
+  const setIsCartOpen=(bool)=>{
+
+    dispatch(createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN,boll) );
+  }
 
   return (
     <CartContext.Provider
@@ -88,6 +155,7 @@ export const CartProvider = ({ children }) => {
         addItemToCart,
         removetItemFromCart,
         cleartItemFromCart,
+        setIsCartOpen,
         totalCartQuantity,
         totalCartCost
       }}
