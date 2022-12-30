@@ -138,6 +138,8 @@ const updateCartItemsReducer=(newCartItems) => {
 
   const cleartItemFromCart = (product) => {
     const newCartItems= setCartItems(clearItemFromCart(cartItems,product))
+  
+
     updateCartItemsReducer(newCartItems);
   };
 
@@ -146,18 +148,19 @@ const updateCartItemsReducer=(newCartItems) => {
     dispatch(createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN,boll) );
   }
 
+
   return (
     <CartContext.Provider
       value={{
         cartDropDownState,
-        setCartDropDownState,
+        // setCartDropDownState,
         cartItems,
         addItemToCart,
         removetItemFromCart,
         cleartItemFromCart,
         setIsCartOpen,
         totalCartQuantity,
-        totalCartCost
+        // totalCartCost
       }}
     >
       {children}
