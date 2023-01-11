@@ -3,9 +3,9 @@ import { useCartContext } from '../../contexts/CartContext';
 
 export const CartIcon = () => {
 
-   const{cartDropDownState,setCartDropDownState,totalCartQuantity}=useCartContext();
+   const{cartDropDownState,setIsCartOpen,totalCartQuantity}=useCartContext();
 
-   const toggleCartDropDownState=()=>setCartDropDownState(!cartDropDownState);
+   const toggleCartDropDownState=()=>setIsCartOpen(!cartDropDownState);
 
   return (
 
