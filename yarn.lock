@@ -2961,6 +2961,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stripe/react-stripe-js@npm:^1.16.3":
+  version: 1.16.3
+  resolution: "@stripe/react-stripe-js@npm:1.16.3"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    "@stripe/stripe-js": ^1.44.1
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 35e65bc06e57725f3e0f5ca942cb247c5a7f603313c06e604a4041783ec8bf82bc758759f625ab04f9381483729265b219a2c8109874e339d6fae3fd188a2002
+  languageName: node
+  linkType: hard
+
+"@stripe/stripe-js@npm:^1.46.0":
+  version: 1.46.0
+  resolution: "@stripe/stripe-js@npm:1.46.0"
+  checksum: e9f1a6c1abc1e9eb5cfe7d604066230078958d3ada61089912829b57d090e768d6310149f054c8da0a8c49d7a313c44418705f91174909c2d2313c9ded781be1
+  languageName: node
+  linkType: hard
+
 "@surma/rollup-plugin-off-main-thread@npm:^2.2.3":
   version: 2.2.3
   resolution: "@surma/rollup-plugin-off-main-thread@npm:2.2.3"
@@ -3435,6 +3455,13 @@ __metadata:
   version: 18.11.13
   resolution: "@types/node@npm:18.11.13"
   checksum: b0c1aa3bd2f5df8240e61096a49d6d4be600109b824d23408ec4ba1ec057dc0c60588e09f73b8a60455ad26d367e9c5562fad8403099f885cbc7b4cace83ec4c
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:>=8.1.0":
+  version: 18.11.18
+  resolution: "@types/node@npm:18.11.18"
+  checksum: 03f17f9480f8d775c8a72da5ea7e9383db5f6d85aa5fefde90dd953a1449bd5e4ffde376f139da4f3744b4c83942166d2a7603969a6f8ea826edfb16e6e3b49d
   languageName: node
   linkType: hard
 
@@ -5990,6 +6017,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
+  languageName: node
+  linkType: hard
+
 "duplexer@npm:^0.1.2":
   version: 0.1.2
   resolution: "duplexer@npm:0.1.2"
@@ -7309,9 +7343,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "habito-react-app@workspace:."
   dependencies:
+    "@stripe/react-stripe-js": ^1.16.3
+    "@stripe/stripe-js": ^1.46.0
     "@testing-library/jest-dom": ^5.14.1
     "@testing-library/react": ^13.0.0
     "@testing-library/user-event": ^13.2.1
+    dotenv: ^16.0.3
     eslint-config-react-app: ^7.0.1
     firebase: ^9.14.0
     react: ^18.2.0
@@ -7321,7 +7358,10 @@ __metadata:
     react-scripts: 5.0.1
     redux: ^4.2.0
     redux-logger: ^3.0.6
+    redux-persist: ^6.0.0
+    reselect: ^4.1.7
     sass: ^1.56.1
+    stripe: ^11.6.0
     styled-components: ^5.3.6
     web-vitals: ^2.1.0
     yarn: ^1.22.19
@@ -11139,7 +11179,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -11225,7 +11265,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:6.11.0":
+"qs@npm:6.11.0, qs@npm:^6.11.0":
   version: 6.11.0
   resolution: "qs@npm:6.11.0"
   dependencies:
@@ -11589,6 +11629,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"redux-persist@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "redux-persist@npm:6.0.0"
+  peerDependencies:
+    redux: ">4.0.0"
+  checksum: edaf10dbf17351ce8058d0802357adae8665b3a1ff39371834e37838ddbe1a79cccbc717b8ba54acb5307651ccf51d0f7dc1cbc8dbae0726ff952d11ef61c6b8
+  languageName: node
+  linkType: hard
+
 "redux@npm:^4.2.0":
   version: 4.2.0
   resolution: "redux@npm:4.2.0"
@@ -11725,6 +11774,13 @@ __metadata:
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
   checksum: eee0e303adffb69be55d1a214e415cf42b7441ae858c76dfc5353148644f6fd6e698926fc4643f510d5c126d12a705e7c8ed7e38061113bdf37547ab356797ff
+  languageName: node
+  linkType: hard
+
+"reselect@npm:^4.1.7":
+  version: 4.1.7
+  resolution: "reselect@npm:4.1.7"
+  checksum: 738d8e2b8f0dca154ad29de6a209c9fbca2d70ae6788fd85df87f2c74b95a65bbf2d16d43a9e2faff39de34d17a29d706ba08a6b2ee5660c09589edbd19af7e1
   languageName: node
   linkType: hard
 
@@ -12589,6 +12645,16 @@ __metadata:
   version: 3.1.1
   resolution: "strip-json-comments@npm:3.1.1"
   checksum: 492f73e27268f9b1c122733f28ecb0e7e8d8a531a6662efbd08e22cccb3f9475e90a1b82cab06a392f6afae6d2de636f977e231296400d0ec5304ba70f166443
+  languageName: node
+  linkType: hard
+
+"stripe@npm:^11.6.0":
+  version: 11.6.0
+  resolution: "stripe@npm:11.6.0"
+  dependencies:
+    "@types/node": ">=8.1.0"
+    qs: ^6.11.0
+  checksum: f959f2d4fbeacbcb4e11350012ffef0ae4708cd9bbe3800cdc747c5f1dcb688fde0733df722a624fceb35d0b486cf32d8e86097513f028a19c9d18a4e54ec75b
   languageName: node
   linkType: hard
 
