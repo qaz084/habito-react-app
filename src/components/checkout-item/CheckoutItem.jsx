@@ -34,7 +34,7 @@ const dispatch=useDispatch();
         </CheckoutItemArrow>
       </CheckoutItemQuantity>
 
-      <CheckoutItemPrice>{price}</CheckoutItemPrice>
+      <CheckoutItemPrice>$ {price}</CheckoutItemPrice>
 
       <CheckoutIemoveButton onClick={clearItemHandler}>
         &#10005;

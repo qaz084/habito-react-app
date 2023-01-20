@@ -5,9 +5,9 @@ export const CategoryPreview = ({title, products}) => {
 
   return (
     <CategoryPreviewContainer>
-        <h2>
+      
             <CategoryTitle>{title.toUpperCase()}</CategoryTitle>
-        </h2>
+       
         <CategoryPreviewProduct>
 
             {

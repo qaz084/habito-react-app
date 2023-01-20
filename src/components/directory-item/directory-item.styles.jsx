@@ -8,43 +8,52 @@ export const BackgroundImage=styled.div`
       background-image: ${({imageUrl})=>`url(${imageUrl})`}
   
   `
-
   export const DirectoryBodyContainer=styled.div` 
-  height: 90px;
-      padding: 0 25px;
+      height: 90px;
+      /* padding: 0 25px; */
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      border: 1px solid black;
-      background-color: white;
-      opacity: 0.7;
-      position: absolute;
-  
+      justify-content: space-evenly;
+      /* border: 1px solid black; */
+      color:#272727;
+      /* background-color: white; */
+      opacity: 1;
+      /* position: absolute; */
       h2 {
         font-weight: bold;
         margin: 0 6px 0;
-        font-size: 22px;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color:#272727;
         text-transform:uppercase;
       }
   
       p {
-        font-weight: lighter;
-        font-size: 16px;
+        font-weight: regular;
+        font-size: 1rem;
       }
+    
   `
   export const DirectoryItemContainer=styled.div` 
-  min-width: 30%;
-    height: 240px;
-    flex: 1 1 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    margin: 0 7.5px 15px;
-    overflow: hidden;
+  height: 350px;
+  width: 600px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  /* margin:2rem; */
+  /* min-width:400px; */
+  /* margin: 1rem; */
+  /* padding:1rem; */
+  align-items: center;
+   justify-content: center; 
+  /* overflow: hidden; */
+  /* background-color:green; */
+  /* margin:5rem; */
+  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+   */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   
+
+ 
     &:hover {
       cursor: pointer;
   
@@ -54,11 +63,11 @@ export const BackgroundImage=styled.div`
       }
   
       & ${DirectoryBodyContainer} {
-        opacity: 0.9;
+        opacity: 0.7;
       }
     }
   
-    &.large {
+    /* &.large {
       height: 380px;
     }
   
@@ -68,5 +77,18 @@ export const BackgroundImage=styled.div`
   
     &:last-child {
       margin-left: 7.5px;
-    }
+    } */
+/* 
+    @media (max-width:800px){
+  grid-template-columns: 50% 50%;
+  height: 300px;
+  width: 400px;
+  margin:1rem;
+    } */
+
+  `
+  export const ImageContainer = styled.div`
+    width:100%;
+    height:100%;
+    overflow:hidden;
   `

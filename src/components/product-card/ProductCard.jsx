@@ -3,7 +3,7 @@ import{useDispatch,useSelector}from 'react-redux';
 import { addItemToCart } from '../../store/cart/cart.action';
 import { selectCartItems } from '../../store/cart/cart.selector';
 import { Button,BUTTON_TYPE_CLASSES } from '../button/Button'
-import {ProductCardContainer,ProductCardFooter,ProductCardName,ProductCardPrice}from './product-card.styles'
+import {ProductCardContainer,ProductCardFooter,ProductCardImageContainer,ProductCardName,ProductCardPrice}from './product-card.styles'
 
 export const ProductCard = ({product}) => {
 
@@ -15,10 +15,12 @@ export const ProductCard = ({product}) => {
 
   return (
     <ProductCardContainer>
+      <ProductCardImageContainer>
             <img src={imageUrl} alt={`${name}`}/>
+      </ProductCardImageContainer>
             <ProductCardFooter>
                 <ProductCardName>{name}</ProductCardName>
-                <ProductCardPrice>{price}</ProductCardPrice>
+                <ProductCardPrice>${price}</ProductCardPrice>
             </ProductCardFooter>
             <Button buttonType={BUTTON_TYPE_CLASSES.inverted}onClick={addProductToCart}>Add to cart</Button>
     </ProductCardContainer>
