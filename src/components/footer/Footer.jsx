@@ -15,11 +15,11 @@ export const Footer = () => {
     <FooterContainer>
       <h2>made by Jonathan Bruno Iurman</h2>
       <FooterDataContainer>
-        <a target="_blank" href="https://www.linkedin.com/in/jonathan-iurman/">
+        <a target="_blank" href="https://www.linkedin.com/in/jonathan-iurman/"  rel="noopener noreferrer" >
           <LinkedInIcon />
           <span>/jonathan-iurman</span>
         </a>
-        <a target="_blank" href="https://github.com/qaz084">
+        <a target="_blank" href="https://github.com/qaz084"  rel="noopener noreferrer">
           <FooterLogosGitHub src={GitHubLogo} />
           <span>/qaz084</span>
         </a>
