@@ -12,9 +12,21 @@ export const CategoriesContainer=styled.div`
     /* justify-content: center; */
     justify-items: center;
     gap:8rem;
-    padding: 4rem;
     margin-top:7rem;
+    padding:4rem;
+
+ @media screen and (max-width:720px){
+
+    justify-content:center;
+
+    grid-template-columns: repeat( auto-fit, minmax(min-content,1fr));
+    gap:4rem;
+    padding:2rem;
+  margin:0 1.5rem;
+  margin-top:7rem;
  
+   
+ }
 
 ` 
   

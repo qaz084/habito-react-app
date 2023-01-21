@@ -43,6 +43,8 @@ margin-left:4rem;
     margin-left:6rem;
   } 
   `
+
+
   export const Logo=styled.img`
     width:100%;
   `
@@ -52,6 +54,7 @@ export const NavLinksContainer=styled.div`
     width: 30%;
     height: 100%;
     display: flex;
+ 
     align-items: center;
     justify-content: space-evenly;
     /* background-color:red; */
@@ -77,13 +80,19 @@ export const NavLinksContainer=styled.div`
     
 `
 export const NavLink =styled(Link)`
- padding: 10px 15px;
+width:100px;
+      padding: 10px 15px;
       cursor: pointer;
       color:white;
       font-size:1.2rem;
 
+      &:hover{
+        font-weight: bold;
+      }
+
       @media screen and (max-width:820px){
-        font-size:1.5rem;
+        width:150px;
+        font-size:1.4rem;
         margin-left:1rem;
   } 
 `
