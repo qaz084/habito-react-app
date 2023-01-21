@@ -23,6 +23,8 @@ export const NavigationContainer=styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+
  
   
   @media screen and (max-width:800px){
@@ -57,24 +59,26 @@ export const NavLinksContainer=styled.div`
  
     align-items: center;
     justify-content: space-evenly;
-    /* background-color:red; */
+   
     align-self: flex-end;
+    position:absolute;
+    right:2rem;
 
     @media screen and (max-width:820px){
-      width: 60%;
+      width: 50%;
       justify-content:end;
       /* background-color:red; */
-      height:300px;
+      height:200px;
       position:absolute;
-      right: 0;
+      right: -1rem;
       top:100%;
 
       display:${props=>props.mobileNavBar?'flex':'none'};
       background-color: ${props=>props.mobileNavBar&&' #272727'};
-      justify-content: ${props=>props.mobileNavBar&&' start'};
+      justify-content: ${props=>props.mobileNavBar&& 'start'};
       align-items:start;
      flex-direction:column;
-     gap:2rem;
+    
 
   } 
     
@@ -94,6 +98,7 @@ width:100px;
         width:150px;
         font-size:1.4rem;
         margin-left:1rem;
+        margin-top:2rem;
   } 
 `
 export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`

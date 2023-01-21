@@ -15,22 +15,27 @@ export const FooterContainer = styled.footer`
   align-items: center;
   padding: 2rem;
 
+
   h2 {
     color: white;
     font-size: 1rem;
     font-weight: normal;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    margin-top:1rem;
   }
 
   @media screen and (max-width: 820px) {
-
-    padding: 4rem;
-
+    margin-top:2rem;
+    padding: 2rem;
+    height: 15vh;
+    /* background-color:red; */
     
   h2 {
-    
-    margin-bottom: 3rem;
+    color: white;
+    font-size: .8rem;
+ 
   }
+    
   }
 `;
 export const FooterDataContainer = styled.div`
@@ -54,8 +59,15 @@ export const FooterDataContainer = styled.div`
 
   @media screen and (max-width: 820px) {
 
-    width: 90%;
-    gap:2rem;
+    width: 100%;
+    gap:1rem;
+    a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    gap: 1rem;
+  }
 }
 `;
 

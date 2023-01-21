@@ -59,7 +59,8 @@ export const BackgroundImage=styled.div`
   
     @media screen and (max-width:620px){
 
-      width:100%;
+      width:75%;
+      /* background-color:red; */
     }
   `
   export const ImageContainer = styled.div`

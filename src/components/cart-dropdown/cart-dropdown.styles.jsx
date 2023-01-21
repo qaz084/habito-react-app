@@ -10,8 +10,8 @@ export const CartDropdownContainer = styled.div`
   padding: 20px;
 
   background-color:${props=>props.closeModal?'red':'white'};
-  top: 90px;
-  right: 40px;
+  top: 85px;
+  right: 0px;
   z-index: 5;
   display: ${props=>props.closeModal?'none':'flex'};
 

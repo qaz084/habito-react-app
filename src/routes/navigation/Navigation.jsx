@@ -54,9 +54,9 @@ export const Navigation = () => {
             </NavLink>
           )}
 
-         <CartIcon />
             
         </NavLinksContainer>
+         <CartIcon />
 
         <StyledFontAwesomeIcon onClick={handleBurgerButtonClick} icon={isBurgerShown}/>
 

@@ -19,6 +19,8 @@ export const CartIconContainer=styled.div`
     @media screen and (max-width:820px){
         font-size:1rem;
         margin-left:1.5rem;
+      
+        
         
   } 
 ` 

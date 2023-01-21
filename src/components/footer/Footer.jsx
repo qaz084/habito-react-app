@@ -14,6 +14,7 @@ export const Footer = () => {
   return (
     <FooterContainer>
       <h2>made by Jonathan Bruno Iurman</h2>
+      
       <FooterDataContainer>
         <a target="_blank" href="https://www.linkedin.com/in/jonathan-iurman/"  rel="noopener noreferrer" >
           <LinkedInIcon />
