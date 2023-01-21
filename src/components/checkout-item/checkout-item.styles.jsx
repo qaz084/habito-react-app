@@ -15,6 +15,7 @@ export const CheckoutItemContainer = styled.div`
 
     font-size: 1.2rem;
     justify-content:space-around;
+    width:90%;
   }
 `;
 

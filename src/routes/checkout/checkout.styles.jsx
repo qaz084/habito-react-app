@@ -31,6 +31,7 @@ export const CheckoutContainer=styled.div`
       font-weight:regular;
       justify-content: space-around;
       font-size:1rem;
+      width:90%;
 
 
   }
