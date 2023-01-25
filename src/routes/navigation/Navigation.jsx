@@ -36,7 +36,7 @@ export const Navigation = () => {
       <Header>
        <NavigationContainer>
         <LogoContainer  to="/">
-          <Logo src={HabitoLogo} />
+          <Logo src={HabitoLogo} alt="Habito logo"/>
         </LogoContainer>
 
         <NavLinksContainer mobileNavBar={isBurgerClicked}>
